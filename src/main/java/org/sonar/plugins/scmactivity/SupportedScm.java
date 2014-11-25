@@ -24,19 +24,19 @@ import org.apache.maven.scm.provider.accurev.AccuRevScmProvider;
 import org.apache.maven.scm.provider.bazaar.BazaarScmProvider;
 import org.apache.maven.scm.provider.clearcase.ClearCaseScmProvider;
 import org.apache.maven.scm.provider.cvslib.cvsexe.CvsExeScmProvider;
-import org.apache.maven.scm.provider.hg.HgScmProvider;
 import org.apache.maven.scm.provider.integrity.IntegrityScmProvider;
 import org.apache.maven.scm.provider.jazz.JazzScmProvider;
 import org.apache.maven.scm.provider.perforce.PerforceScmProvider;
 import org.apache.maven.scm.provider.svn.svnexe.SvnExeScmProvider;
 import org.sonar.plugins.scmactivity.maven.SonarGitExeScmProvider;
 import org.sonar.plugins.scmactivity.maven.SonarTfsScmProvider;
+import org.sonar.plugins.scmactivity.maven.SonarHgScmProvider;
 
 public enum SupportedScm {
   SVN(new SvnExeScmProvider(), "scm:svn:svn://"),
   CVS(new CvsExeScmProvider(), null),
   GIT(new SonarGitExeScmProvider(), "scm:git:"),
-  HG(new HgScmProvider(), "scm:hg:"),
+  HG(new SonarHgScmProvider(), "scm:hg:"),
   BAZAAR(new BazaarScmProvider(), "scm:bazaar:"),
   CLEAR_CASE(new ClearCaseScmProvider(), null),
   ACCU_REV(new AccuRevScmProvider(), null),

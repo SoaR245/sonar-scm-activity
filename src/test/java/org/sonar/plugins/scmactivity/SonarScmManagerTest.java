@@ -25,7 +25,6 @@ import org.apache.maven.scm.provider.bazaar.BazaarScmProvider;
 import org.apache.maven.scm.provider.clearcase.ClearCaseScmProvider;
 import org.apache.maven.scm.provider.cvslib.cvsexe.CvsExeScmProvider;
 import org.apache.maven.scm.provider.git.gitexe.GitExeScmProvider;
-import org.apache.maven.scm.provider.hg.HgScmProvider;
 import org.apache.maven.scm.provider.integrity.IntegrityScmProvider;
 import org.apache.maven.scm.provider.jazz.JazzScmProvider;
 import org.apache.maven.scm.provider.perforce.PerforceScmProvider;
@@ -34,6 +33,7 @@ import org.junit.Test;
 import org.mockito.InOrder;
 import org.mockito.Mockito;
 import org.slf4j.Logger;
+import org.sonar.plugins.scmactivity.maven.SonarHgScmProvider;
 import org.sonar.plugins.scmactivity.maven.SonarTfsScmProvider;
 
 import static org.fest.assertions.Assertions.assertThat;
@@ -54,7 +54,7 @@ public class SonarScmManagerTest {
     assertThat(scmManager.getProviderByType("svn")).isInstanceOf(SvnExeScmProvider.class);
     assertThat(scmManager.getProviderByType("git")).isInstanceOf(GitExeScmProvider.class);
     assertThat(scmManager.getProviderByType("cvs")).isInstanceOf(CvsExeScmProvider.class);
-    assertThat(scmManager.getProviderByType("hg")).isInstanceOf(HgScmProvider.class);
+    assertThat(scmManager.getProviderByType("hg")).isInstanceOf(SonarHgScmProvider.class);
     assertThat(scmManager.getProviderByType("bazaar")).isInstanceOf(BazaarScmProvider.class);
     assertThat(scmManager.getProviderByType("clearcase")).isInstanceOf(ClearCaseScmProvider.class);
     assertThat(scmManager.getProviderByType("accurev")).isInstanceOf(AccuRevScmProvider.class);
