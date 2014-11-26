@@ -87,6 +87,16 @@ import java.util.List;
     module = false,
     project = false,
     global = false
+  ),
+  @Property(
+    key = ScmActivityPlugin.RELOAD_BLAME,
+    defaultValue = "false",
+    name = "Force to reload full blame",
+    description = "Set blame information for all lines",
+    module = true,
+    project = true,
+    global = true,
+    type = PropertyType.BOOLEAN
   )})
 public final class ScmActivityPlugin extends SonarPlugin {
   public static final String ENABLED = "sonar.scm.enabled";
@@ -95,6 +105,7 @@ public final class ScmActivityPlugin extends SonarPlugin {
   public static final String PASSWORD = "sonar.scm.password.secured";
   public static final String THREAD_COUNT = "sonar.scm.threadCount";
   public static final String PERFORCE_CLIENTSPEC_NAME = "sonar.scm.perforce.clientspec.name";
+  public static final String RELOAD_BLAME = "sonar.scm.reloadBlame";
 
   @SuppressWarnings("unchecked")
   public List getExtensions() {

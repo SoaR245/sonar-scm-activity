@@ -70,6 +70,10 @@ public class ScmConfiguration implements BatchExtension {
     return settings.getString(ScmActivityPlugin.PASSWORD);
   }
 
+  public boolean isReloadBlameEnabled() {
+	  return settings.getBoolean(ScmActivityPlugin.RELOAD_BLAME);
+  }
+  
   public int getThreadCount() {
     int threadCount = settings.getInt(ScmActivityPlugin.THREAD_COUNT);
 
